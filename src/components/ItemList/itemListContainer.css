@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Plus+Jakarta+Sans:wght@300&display=swap');
+
+.cards {
+    display: flex;
+    flex-direction: row;
+}
+
+.imgCard {
+    height: 400px;
+    width: 250px;
+    margin-bottom: 15px;
+}
+
+.card {
+    margin: 10px;
+    max-width: 300px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}
+
+.card-text {
+    font-weight: bold;
+    padding: 5px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+h1 {
+    margin: 30px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: bolder;
+    color: #040408;
+}
+
+.container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
