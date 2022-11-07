@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Plus+Jakarta+Sans:wght@300&display=swap');
 
-.cards {
-    display: flex;
-    flex-direction: row;
-}
-
 .imgCard {
     height: 400px;
     width: 250px;
@@ -35,4 +30,10 @@ h1 {
 .container {
     margin-top: 50px;
     margin-bottom: 50px;
+}
+
+button {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
 }
