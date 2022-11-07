@@ -12,6 +12,7 @@
     border-style: solid;
     border-width: 2px;
     border-color: black;
+    padding: 0;
 }
 
 .card-text {
@@ -21,7 +22,7 @@
 }
 
 h1 {
-    margin: 30px;
+    margin: 50px;
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: bolder;
     color: #040408;
@@ -36,4 +37,10 @@ button {
     background-color: black;
     color: white;
     border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+div.container.card.text-center {
+    margin: 20px;
 }

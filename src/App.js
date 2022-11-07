@@ -11,7 +11,7 @@ function App() {
           <NavBar />
         </header>
         <main>
-          <ItemListContainer greeting="Catálogo de Productos" />
+          <ItemListContainer greeting="Nuestros productos" />
         </main>
         <footer>
           <Footer />
