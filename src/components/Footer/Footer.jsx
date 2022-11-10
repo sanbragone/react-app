@@ -11,8 +11,8 @@ function Footer() {
             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4">Categorías</h6>
               <p>
-                <Link to="/category/cara/" className="text-reset">
-                  Cara
+                <Link to="/category/rostro/" className="text-reset">
+                  Rostro
                 </Link>
               </p>
               <p>

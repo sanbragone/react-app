@@ -8,6 +8,7 @@ function ItemDetail({ producto }) {
         <div className="card-body">
           <h1 className="card-textDetail">{producto.title}</h1>
           <img className="imgCardDetail" src={producto.image}></img>
+          <h5 className="card-textDetail">{producto.description}</h5>
           <h3 className="card-textDetail">U$S {producto.price}</h3>
         </div>
       </div>
