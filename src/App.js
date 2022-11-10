@@ -3,7 +3,6 @@ import Footer from "./components/Footer/Footer";
 import ItemListContainer from "./components/ItemList/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import {useParams} from "react-router-dom";
 
 function App() {
   return (

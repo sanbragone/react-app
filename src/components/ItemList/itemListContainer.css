@@ -43,6 +43,10 @@ button {
     padding-right: 10px;
 }
 
+button:hover {
+    font-weight: bolder;
+}
+
 div.container.card.text-center {
     margin: 20px;
 }
