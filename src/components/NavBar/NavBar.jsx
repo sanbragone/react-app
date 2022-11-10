@@ -1,6 +1,7 @@
+import "./navBar.css";
 import * as React from "react";
 import ShoppingCartIcon from "./CartWidget/CartWidget";
-import "./navBar.css";
+import { Link } from "react-router-dom";
 
 const NavBar = () => (
   <nav className="navbar navbar-expand-lg bg-light">
@@ -18,34 +19,59 @@ const NavBar = () => (
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
-        <li className="nav-item">
-            <img src="/logo.png" className="nav-link active logo" aria-current="page" href="#">
-            </img>
+          <li className="nav-item">
+            <Link to="./">
+              <img
+                src="/logo.png"
+                className="nav-link active logo"
+                aria-current="page"
+              ></img>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="#">
+            <Link className="nav-link active" aria-current="page" to="./">
               Home
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
-              Catalogo
-            </a>
+            <Link className="nav-link" to="/category/cara/">
+              Cara
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
-              Precios
-            </a>
+            <Link className="nav-link" to="/category/cuerpo/">
+              Cuerpo
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
-              Contacto
-            </a>
+            <Link className="nav-link" to="/category/manos/">
+              Manos
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/category/bano/">
+              Baño
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/category/noche/">
+              Noche
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/category/cabello/">
+              Cabello
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/category/exterior/">
+              Exterior
+            </Link>
           </li>
         </ul>
       </div>
     </div>
-    <ShoppingCartIcon/>
+    <ShoppingCartIcon />
   </nav>
 );
 

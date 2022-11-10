@@ -1,21 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Plus+Jakarta+Sans:wght@300&display=swap');
 
-.imgCard {
-    height: 400px;
-    width: 250px;
-    margin-bottom: 15px;
+.imgCardDetail {
+    height: 800px;
+    margin: 15px;
 }
 
-.card {
+.cardDetail {
     margin: 10px;
-    max-width: 300px;
+    max-width: 600px;
     border-style: solid;
     border-width: 2px;
     border-color: black;
     padding: 0;
 }
 
-.card-text {
+.card-textDetail {
+    margin: 20px;
     font-weight: bold;
     padding: 5px;
     font-family: 'Plus Jakarta Sans', sans-serif;
@@ -41,6 +41,6 @@ button {
     padding-right: 10px;
 }
 
-div.container.card.text-center {
+div.container.cacardDetail.text-center {
     margin: 20px;
 }

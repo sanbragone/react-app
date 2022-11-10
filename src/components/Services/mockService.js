@@ -1,21 +1,36 @@
 import productos from "../../data/data";
 
 // Funcion para simular un backend, la cual trae nuestro array de productos.
-function getItems() {
+function getItems(id) {
   return new Promise((resolve) => {
-    //Agrego una demora en la ejecucion de la funcion.
-    setTimeout(() => {
-      resolve(productos);
-    }, 2000);
+    if (id === undefined) {
+      //Agrego una demora en la ejecucion de la funcion.
+      setTimeout(() => {
+        resolve(productos);
+      }, 1000);
+    } else {
+      let itemsRequeridos = productos.filter((item) => item.category === id);
+      setTimeout(() => {
+        resolve(itemsRequeridos);
+      }, 1000);
+    }
   });
 }
 
 // Funcion para simular un backend, la cual trae nuestro array de productos. Esta la utilizo para buscar un item en particular en el array.
-export function getItemDetail() {
-  return new Promise((resolve) => {
+export function getItemDetail(idParametro) {
+  return new Promise((resolve, reject) => {
+    // Buscamos un item dentro del array con el metodo "find"
+    let itemRequerido = productos.find(
+      (item) => item.id === Number(idParametro)
+    );
+
+    // Condicional para el reject
+    if (itemRequerido === undefined) reject("Item no encontrado.");
+
     //Agrego una demora en la ejecucion de la funcion.
     setTimeout(() => {
-      resolve(productos[10]);
+      resolve(itemRequerido);
     }, 2000);
   });
 }

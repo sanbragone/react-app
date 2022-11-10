@@ -4,26 +4,25 @@ import "./itemDetailContainer.css";
 import { getItemDetail } from "../Services/mockService";
 import { useEffect } from "react";
 import ItemDetail from "./ItemDetail";
+import {useParams} from "react-router-dom";
 
 //Funcion para renderizar los productos que traigo del array en data.js
 
-function ItemDetailContainer() {
+function ItemDetailContainer(props) {
   //Genero variable con array vacio.
   const [producto, setProducto] = useState([]);
+  const {id} = useParams();
 
   useEffect(() => {
-    getItemDetail().then((respuestaConDatos) => {
+    getItemDetail(id).then((respuestaConDatos) => {
       setProducto(respuestaConDatos);
     });
   }, []);
 
   return (
     <div>
-      <ItemDetail
-        title={producto.title}
-        image={producto.image}
-        price={producto.price}
-      />
+      <h1>{props.detail}</h1>
+      <ItemDetail producto={producto} />
     </div>
   );
 }
