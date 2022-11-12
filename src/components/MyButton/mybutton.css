@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Plus+Jakarta+Sans:wght@300&display=swap');
+
+.btn {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 5px;
+}
+
+.btn:hover {
+    font-weight: bolder;
+    background-color: black;
+    color: white;
+}
+
+.btnText {
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.btnSpan {
+    font-weight: bolder;
+}
