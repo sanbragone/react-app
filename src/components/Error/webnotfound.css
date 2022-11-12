@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Plus+Jakarta+Sans:wght@300&display=swap');
+
+.linkNotFound {
+    display: inline-block;
+    margin: 500px;
+    color: black;
+    font-size: 100px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.linkNotFound:hover {
+    color: rgb(71, 71, 71);
+}
