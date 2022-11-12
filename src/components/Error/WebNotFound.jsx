@@ -1,7 +1,6 @@
 import React from "react";
 import "./webnotfound.css";
 import { Link } from "react-router-dom";
-import "animate.css";
 
 function WebNotFound() {
   return (
