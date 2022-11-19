@@ -1,9 +1,10 @@
 import { createContext, useState } from "react";
 
 export const cartContext = createContext();
+
 export function CartContextProvider({ children }) {
-  const saludoContext = "Hola context";
   const [cart, setCart] = useState([]);
+
   function addToCart(producto, count) {
     let itemAlreadyInCart = cart.findIndex(
       (itemsInCart) => itemsInCart.id === producto.id
@@ -29,7 +30,7 @@ export function CartContextProvider({ children }) {
   }
 
   function clearCart() {
-    //vaciar carrito
+    //
   }
 
   function removeItem(idRemove) {
@@ -46,7 +47,6 @@ export function CartContextProvider({ children }) {
       value={{
         addToCart,
         itemsInCart,
-        saludoContext,
         cart,
         clearCart,
         removeItem,
