@@ -3,11 +3,17 @@ import "./itemDetailContainer.css";
 import ItemCount from "../ItemCount/ItemCount";
 import { useContext } from "react";
 import { cartContext } from "../../context/cartContext";
+import MyButton from "../MyButton/MyButton";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function ItemDetail({ producto }) {
+  const [isInCart, setisInCart] = useState(false);
   const { addToCart } = useContext(cartContext);
+
   function onAddToCart(count) {
-    addToCart(producto,count)
+    setisInCart(count);
+    addToCart(producto, count);
   }
 
   return (
@@ -18,7 +24,13 @@ function ItemDetail({ producto }) {
           <img className="imgCardDetail" src={producto.image}></img>
           <h5 className="card-textDetail">{producto.description}</h5>
           <h3 className="card-textDetail">U$S {producto.price}</h3>
-          <ItemCount onAddToCart={onAddToCart} stock={producto.stock} />
+          {isInCart ? (
+            <Link to="/cart">
+              <MyButton>Ir al carrito</MyButton>
+            </Link>
+          ) : (
+            <ItemCount onAddToCart={onAddToCart} stock={producto.stock} />
+          )}
         </div>
       </div>
     </div>

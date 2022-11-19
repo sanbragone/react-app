@@ -5,6 +5,8 @@ import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import WebNotFound from "./components/Error/WebNotFound";
 import { CartContextProvider } from "./context/cartContext";
+import Cart from "./components/CartView/CartView";
+import CartView from "./components/CartView/CartView";
 
 function App() {
   return (
@@ -24,7 +26,7 @@ function App() {
             path="/item/:id"
             element={<ItemDetailContainer detail="Detalle del producto" />}
           />
-          <Route path="/cart" element={<h1>En construcción</h1>} />
+          <Route path="/cart" element={<CartView/>} />
           <Route path="*" element={<WebNotFound />} />
         </Routes>
         <Footer />

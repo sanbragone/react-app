@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 function ShoppingCartIcon(props) {
   const myContext = useContext(cartContext);
+
   return (
     <>
     <Link to="/cart">

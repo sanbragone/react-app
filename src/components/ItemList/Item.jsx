@@ -2,7 +2,7 @@ import * as React from "react";
 import "./itemListContainer.css";
 import { Link } from "react-router-dom";
 
-function Item({ title, image, price, id }) {
+function Item({ title, image, price, id, discount }) {
   const urlDetail = `/item/${id}`;
   return (
     <div className="container card text-center">
@@ -10,6 +10,7 @@ function Item({ title, image, price, id }) {
         <img className="imgCard" src={image}></img>
         <h5 className="card-text">{title}</h5>
         <p className="card-text">U$S {price}</p>
+        {discount && <small className="card-text">¡{discount} Off!</small>}
         <Link to={urlDetail}>
           <button>Ver más</button>
         </Link>

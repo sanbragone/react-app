@@ -7,12 +7,12 @@ function getItems(id) {
       //Agrego una demora en la ejecucion de la funcion.
       setTimeout(() => {
         resolve(productos);
-      }, 1000);
+      }, 2000);
     } else {
       let itemsRequeridos = productos.filter((item) => item.category === id);
       setTimeout(() => {
         resolve(itemsRequeridos);
-      }, 1000);
+      }, 2000);
     }
   });
 }
