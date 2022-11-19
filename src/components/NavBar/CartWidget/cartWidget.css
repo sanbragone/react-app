@@ -1,4 +1,9 @@
 .shoppingCart {
     width: 44px;
-    margin-right: 15px;
+    margin-right: 5px;
+}
+
+span {
+    margin-right: 20px;
+    font-weight: bolder;
 }

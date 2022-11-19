@@ -7,7 +7,7 @@ const productos = [
     price: 109.95,
     category: "rostro",
     image: "/img/cremaExfoliante.jpg",
-    stock: 512,
+    stock: 120,
     description: "Consigue eliminar las células muertas y las impurezas cutáneas realizando una limpieza profunda en la piel",
   },
   {

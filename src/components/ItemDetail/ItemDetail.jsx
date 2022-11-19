@@ -1,13 +1,13 @@
 import * as React from "react";
 import "./itemDetailContainer.css";
 import ItemCount from "../ItemCount/ItemCount";
-//Importo Toastify para los alerts.
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
+import { useContext } from "react";
+import { cartContext } from "../../context/cartContext";
 
 function ItemDetail({ producto }) {
+  const { addToCart } = useContext(cartContext);
   function onAddToCart(count) {
-    alert(`Agregaste ${count} itema al carrito!`);
+    addToCart(producto,count)
   }
 
   return (

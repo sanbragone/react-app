@@ -4,19 +4,32 @@ import ItemListContainer from "./components/ItemList/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import WebNotFound from "./components/Error/WebNotFound";
+import { CartContextProvider } from "./context/cartContext";
 
 function App() {
   return (
-    <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<ItemListContainer greeting="Nuestros productos" />} />
-        <Route path="/category/:id" element={<ItemListContainer detail="Detalle del producto" />} />
-        <Route path="/item/:id" element={<ItemDetailContainer detail="Detalle del producto" />} />
-        <Route path="*" element={<WebNotFound/>} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <CartContextProvider>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route
+            path="/"
+            element={<ItemListContainer greeting="Nuestros productos" />}
+          />
+          <Route
+            path="/category/:id"
+            element={<ItemListContainer detail="Detalle del producto" />}
+          />
+          <Route
+            path="/item/:id"
+            element={<ItemDetailContainer detail="Detalle del producto" />}
+          />
+          <Route path="/cart" element={<h1>En construcción</h1>} />
+          <Route path="*" element={<WebNotFound />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </CartContextProvider>
   );
 }
 
