@@ -13,6 +13,7 @@ function CartView() {
     <div>
       {cart.map((item) => (
         <div>
+          <h1 className="animate__animated animate__bounce">Productos en el carrito</h1>
           <hr />
           <div className="cartViewImgFlex">
             <img className="cartViewImg" src={item.image} />
