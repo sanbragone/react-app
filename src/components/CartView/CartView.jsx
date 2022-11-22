@@ -12,7 +12,7 @@ function CartView() {
   return (
     <div>
       {cart.map((item) => (
-        <div>
+        <div key={item.id}>
           <h1 className="animate__animated animate__bounce">Productos en el carrito</h1>
           <hr />
           <div className="cartViewImgFlex">
