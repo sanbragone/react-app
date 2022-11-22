@@ -6,7 +6,7 @@ function Loader() {
 
   return (
     <div className="loader">
-      <Ripples size={145} speed={2} color="black" />
+      <Ripples size={170} speed={2} color="black" />
     </div>
   );
 }
