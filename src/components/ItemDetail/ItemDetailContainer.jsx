@@ -26,7 +26,7 @@ function ItemDetailContainer(props) {
 
   return (
     <div>
-      <h1>{props.detail}</h1>
+      <h1 className="animate__animated animate__bounce">{props.detail}</h1>
       <ItemDetail producto={producto} />
     </div>
   );

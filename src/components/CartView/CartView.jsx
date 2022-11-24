@@ -7,13 +7,13 @@ import "./cartView.css";
 function CartView() {
   const { cart, removeItem, clearCart, priceInCart } = useContext(cartContext);
 
-  if (cart.length === 0) return <h1>Carrito vacio</h1>;
+  if (cart.length === 0) return <h1>Carrito vacío</h1>;
 
   return (
     <div>
+      <h1 className="animate__animated animate__bounce">Productos en el carrito</h1>
       {cart.map((item) => (
         <div key={item.id}>
-          <h1 className="animate__animated animate__bounce">Productos en el carrito</h1>
           <hr />
           <div className="cartViewImgFlex">
             <img className="cartViewImg" src={item.image} />
