@@ -40,6 +40,12 @@ export function CartContextProvider({ children }) {
 
   function priceInCart() {
     // precio total de la compra.
+    let totalPrice = 0;
+    cart.forEach(
+      (producto) =>
+        (totalPrice = totalPrice + producto.price * producto.cantidad)
+    );
+    return totalPrice;
   }
 
   return (
