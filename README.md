@@ -14,4 +14,4 @@ Se utilizó **NPM** para la instalación de **React App**, como punto de partida
 
 # Demostración de funcionalidad
 
-<iframe src="https://giphy.com/embed/UBVDBlP8wq3y6c9v6E" width="480" height="445" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+![Demostracion de sitio GIF](https://media.giphy.com/media/UBVDBlP8wq3y6c9v6E/giphy.gif)
