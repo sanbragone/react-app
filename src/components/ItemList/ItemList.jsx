@@ -1,20 +1,20 @@
 import React from "react";
 import Item from "./Item";
 
-function ItemList({ productos }) {
+function ItemList({ products }) {
   return (
     <div>
       <h1 className="animate__animated animate__bounce">Nuestros productos</h1>
       <div className="row container-fluid h-100 d-flex align-items-center justify-content-center itemDetailContainer">
-        {productos.map((producto) => {
+        {products.map((product) => {
           return (
             <Item
-              key={producto.id}
-              id={producto.id}
-              title={producto.title}
-              image={producto.image}
-              price={producto.price}
-              discount={producto.discount}
+              key={product.id}
+              id={product.id}
+              title={product.title}
+              image={product.image}
+              price={product.price}
+              discount={product.discount}
             />
           );
         })}

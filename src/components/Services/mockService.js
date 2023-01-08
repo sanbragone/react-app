@@ -1,4 +1,4 @@
-import productos from "../../data/data";
+import products from "../../data/data";
 
 // Funcion para simular un backend, la cual trae nuestro array de productos.
 function getItems(id) {
@@ -6,10 +6,10 @@ function getItems(id) {
     if (id === undefined) {
       //Agrego una demora en la ejecucion de la funcion.
       setTimeout(() => {
-        resolve(productos);
+        resolve(products);
       }, 2000);
     } else {
-      let itemsRequeridos = productos.filter((item) => item.category === id);
+      let itemsRequeridos = products.filter((item) => item.category === id);
       setTimeout(() => {
         resolve(itemsRequeridos);
       }, 2000);
@@ -21,7 +21,7 @@ function getItems(id) {
 export function getItemDetail(idParametro) {
   return new Promise((resolve, reject) => {
     // Buscamos un item dentro del array con el metodo "find"
-    let itemRequerido = productos.find(
+    let itemRequerido = products.find(
       (item) => item.id === Number(idParametro)
     );
 

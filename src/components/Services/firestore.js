@@ -40,21 +40,21 @@ export default async function getItems() {
   return documentsData;
 }
 
-export async function getItemsOrdered() {
-  const colectionProductsRef = collection(DB, "products");
-  const q = query(colectionProductsRef, orderBy("index"), limit(10));
+// export async function getItemsOrdered() {
+//   const colectionProductsRef = collection(DB, "products");
+//   const q = query(colectionProductsRef, orderBy("index"), limit(10));
 
-  const documentSnapshot = await getDocs(q);
+//   const documentSnapshot = await getDocs(q);
 
-  const documentsData = documentSnapshot.docs.map((doc) => {
-    return {
-      ...doc.data(),
-      id: doc.id,
-    };
-  });
+//   const documentsData = documentSnapshot.docs.map((doc) => {
+//     return {
+//       ...doc.data(),
+//       id: doc.id,
+//     };
+//   });
 
-  return documentsData;
-}
+//   return documentsData;
+// }
 
 // Traemos un Documento por su ID
 
@@ -87,6 +87,221 @@ export async function getItemsByCategory(categoryParams) {
 export async function createOrder(order) {
   const collectionRef = collection(DB, "orders");
   const docOrder = await addDoc(collectionRef, order);
-  console.log(docOrder.id);
+  console.log("El ID de la compra es:", docOrder.id);
+  return docOrder.id;
 }
-  
+
+export async function exportToFirestore() {
+  const products = [
+    {
+      id: 1,
+      title: "Exfoliante facial",
+      price: 109.95,
+      discount: "25%",
+      category: "rostro",
+      image: "/img/cremaExfoliante.jpg",
+      stock: 120,
+      description:
+        "Consigue eliminar las células muertas y las impurezas cutáneas realizando una limpieza profunda en la piel",
+    },
+    {
+      id: 2,
+      title: "Serum orgánico",
+      price: 122.35,
+      category: "cuerpo",
+      image: "/img/oleoOrganico.jpg",
+      stock: 394,
+      description:
+        "Ayuda a mejorar las propiedades regenerativas y curativas de la piel",
+    },
+    {
+      id: 3,
+      title: "Crema facial",
+      price: 150.99,
+      category: "rostro",
+      image: "/img/cremaCara.jpg",
+      stock: 323,
+      description: "Ayuda a mantener la humedad y elasticidad de tu piel",
+    },
+    {
+      id: 4,
+      title: "Crema corporal",
+      price: 150.99,
+      discount: "15%",
+      category: "cuerpo",
+      image: "/img/cremaPiel.jpg",
+      stock: 323,
+      description:
+        "Producto dermocosmético que se ha ideado para combatir la sequedad de la piel",
+    },
+    {
+      id: 5,
+      title: "Serum para piel",
+      price: 195.11,
+      category: "cuerpo",
+      image: "/img/aceitePiel.jpg",
+      stock: 387,
+      description:
+        "Ideal para un tratamiento hidratante con ingredientes activos y una textura líquida que favorecen una rápida y más profunda absorción",
+    },
+    {
+      id: 6,
+      title: "Crema nocturna",
+      price: 168.47,
+      category: "noche",
+      image: "/img/cremaBlancaAcolchado.jpg",
+      stock: 329,
+      description:
+        "Dormir es la mejor cura de belleza ya que durante la fase de sueño profundo la piel se regenera",
+    },
+    {
+      id: 7,
+      title: "Crema CBD",
+      price: 96.99,
+      category: "noche",
+      image: "/img/cremaCBD.jpg",
+      stock: 223,
+      description:
+        "Nos permite aportar un extra de hidratación a la piel, favorece la regeneración de células muertas y proporciona nutrientes que la fortalecen y le dan tonicidad",
+    },
+    {
+      id: 8,
+      title: "Crema en kit duo",
+      price: 103.99,
+      discount: "45%",
+      category: "cuerpo",
+      image: "/img/cremaConjuntoDos.jpg",
+      stock: 299,
+      description:
+        "Crema de textura suave y aireada que combina la sensación de frescura y suavidad con un agradable aroma frutal",
+    },
+    {
+      id: 9,
+      title: "Crema para manos",
+      price: 64.34,
+      category: "manos",
+      image: "/img/cremaConMano.jpg",
+      stock: 126,
+      description:
+        "Es un complemento de belleza esencial, sobre todo en los días más fríos ya que se pueden generar asperezas y grietas en la piel",
+    },
+    {
+      id: 10,
+      title: "Gel de ducha",
+      price: 109.34,
+      category: "bano",
+      image: "/img/cremaDosBanera.jpg",
+      stock: 355,
+      description:
+        "Disfrutá de un baño placentero con nuestro gel de ducha premium",
+    },
+    {
+      id: 11,
+      title: "Crema gotero",
+      price: 109.23,
+      category: "manos",
+      image: "/img/cremaGotero.jpg",
+      stock: 588,
+      description:
+        "Crema en dosis de gotas para aplicar directamente sobre las arrugas",
+    },
+    {
+      id: 12,
+      title: "Jabón para manos",
+      price: 114.23,
+      category: "manos",
+      image: "/img/cremaGoteroBlanco.jpg",
+      stock: 193,
+      description:
+        "Ayuda a ahorrar jabón dando la cantidad necesaria para un correcto lavado de manos, impidiendo malgastar de más",
+    },
+    {
+      id: 13,
+      title: "Crema gotero pack",
+      price: 599.45,
+      category: "manos",
+      image: "/img/cremaGoteroCuatro.jpg",
+      stock: 129,
+      description:
+        "Kit de cremas en dosis de gotas para aplicar directamente sobre las arrugas",
+    },
+    {
+      id: 14,
+      title: "Crema manos",
+      price: 199.99,
+      category: "manos",
+      image: "/img/cremaLibro.jpg",
+      stock: 453,
+      description:
+        "Ayuda tanto para el cuidado a corto como a largo plazo de la salud y la vitalidad de su piel",
+    },
+    {
+      id: 15,
+      title: "Crema para sol",
+      price: 156.99,
+      category: "exterior",
+      image: "/img/cremaNaranjaDos.jpg",
+      stock: 188,
+      description:
+        "La crema solar es un producto que permite absorber y bloquear la radiación ultravioleta (UV) del sol",
+    },
+    {
+      id: 16,
+      title: "Crema para exterior",
+      price: 129.95,
+      category: "exterior",
+      image: "/img/cremaNaranjaFruta.jpg",
+      stock: 233,
+      description:
+        "El protector solar, bloqueador solar, crema de sol o crema solar es una loción, gel, aerosol u otro tópico que evita o disminuye los efectos causados por la radiación solar",
+    },
+    {
+      id: 17,
+      title: "Crema para peinar",
+      price: 139.99,
+      category: "cabello",
+      image: "/img/cremaPeine.jpg",
+      stock: 398,
+      description:
+        "Consistencia espesa y textura suave que acondiciona el cabello después del lavado",
+    },
+    {
+      id: 18,
+      title: "Kit de cremas",
+      price: 349.85,
+      category: "cuerpo",
+      image: "/img/cremasConjunto.jpg",
+      stock: 323,
+      description:
+        "Contiene la gama completa de productos: la crema de día, la crema de noche, el sérum y la crema All in one. Todas estas cremas son aptas para todo tipo de pieles, incluidas las más sensibles y delicadas",
+    },
+    {
+      id: 19,
+      title: "Kit crema facial",
+      price: 437.95,
+      category: "rostro",
+      image: "/img/cremaTres.jpg",
+      stock: 345,
+      description:
+        "Kit de crema facial para hidratar de la mejor manera tu rostro",
+    },
+    {
+      id: 20,
+      title: "Crema para sol premium",
+      price: 222.99,
+      category: "exterior",
+      image: "/img/cremaVioleta.jpg",
+      stock: 188,
+      description:
+        "Cuando sale el sol, todo el mundo quiere salir y divertirse. Usar protección solar significa que podés hacerlo sabiendo que tu piel está en buenas manos",
+    },
+  ];
+
+  const collectionRef = collection(DB, "products");
+
+  for (let item of products) {
+    delete item.id;
+    let docOrder = await addDoc(collectionRef, item);
+    console.log("Documento credo, id:", docOrder);
+  }
+}

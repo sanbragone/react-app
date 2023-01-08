@@ -1,6 +1,6 @@
 // Array con productos disponibles en el e-commerce.
 
-const productos = [
+const products = [
   {
     id: 1,
     title: "Exfoliante facial",
@@ -186,4 +186,4 @@ const productos = [
   },
 ];
 
-export default productos;
+export default products;

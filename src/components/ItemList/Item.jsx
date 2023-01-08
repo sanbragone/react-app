@@ -10,7 +10,6 @@ function Item({ title, image, price, id, discount }) {
         <img className="imgCard" src={image}></img>
         <h5 className="card-text">{title}</h5>
         <p className="card-text">U$S {price}</p>
-        {/* {discount && <small className="card-text">¡{discount} Off!</small>} */}
         <Link to={urlDetail}>
           <button>Ver más</button>
         </Link>

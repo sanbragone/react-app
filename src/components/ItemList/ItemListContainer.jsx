@@ -11,16 +11,16 @@ import Loader from "../Loader/Loader";
 
 function ItemListContainer() {
   //Genero variable con array vacio.
-  const [productos, setProductos] = useState(null);
+  const [products, setProducts] = useState(null);
   const { id } = useParams();
 
   useEffect(() => {
     getItems(id).then((respuestaConDatos) => {
-      setProductos(respuestaConDatos);
+      setProducts(respuestaConDatos);
     });
   }, [id]);
 
-  return productos ? <ItemList productos={productos} /> : <Loader />;
+  return products ? <ItemList products={products} /> : <Loader />;
 }
 
 export default ItemListContainer;

@@ -10,18 +10,16 @@ function CartView() {
 
   if (cart.length === 0) return <h1>Carrito vacío</h1>;
 
-  function handleCheckout(evt) {
+  async function handleCheckout(evt, data) {
     const order = {
-      buyer: {
-        name: "Santiago",
-        email: "santiago@bragone.com.ar",
-        phone: "44449329",
-      },
+      buyer: "Santiago",
       items: cart,
-      total: 0,
+      total: priceInCart(),
       date: new Date(),
     };
-    createOrder(order);
+
+    const orderId = await createOrder(order);
+    alert(orderId);
   }
 
   return (
@@ -38,17 +36,15 @@ function CartView() {
               <h2>{item.title}</h2>
               <h5>Precio: U$S {item.price}</h5>
               <h5>Items: {item.count}</h5>
-              <MyButton OnTouchButton={() => removeItem(item.id)}>
-                Quitar
-              </MyButton>
+              <button onClick={() => removeItem(item.id)}>Quitar</button>
             </div>
           </div>
         </div>
       ))}
       <hr />
       <div className="containerCartViewButton">
-        <MyButton OnTouchButton={handleCheckout}>Finalizar compra</MyButton>
-        <MyButton OnTouchButton={() => clearCart()}>Vaciar carrito</MyButton>
+        <MyButton onTouchButton={handleCheckout}>Finalizar compra</MyButton>
+        <MyButton onTouchButton={() => clearCart()}>Vaciar carrito</MyButton>
       </div>
     </div>
   );
